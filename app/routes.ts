@@ -19,5 +19,6 @@ export default [
   route("/reorder", "./routes/reorder.tsx"),
   route("/rotary", "./routes/rotary.tsx"),
   route("/swipe_gallery", "./routes/swipe_gallery.tsx"),
-  //   route("/flipper", "./routes/flipper.tsx"),
+  route("/infinity-moving", "./routes/infinity-moving.tsx"),
+  route("/image_slider", "./routes/image_slider.tsx"),
 ] satisfies RouteConfig;
