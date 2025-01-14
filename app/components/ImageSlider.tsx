@@ -30,7 +30,7 @@ export const ImageSlider = ({ items }: { items: Item[] }) => {
   };
 
   return (
-    <article className="flex flex-col justify-center items-center h-screen overflow-hidden">
+    <article className="flex flex-col justify-center items-center h-screen overflow-hidden max-w-4xl mx-auto">
       <section className="flex gap-2 justify-end items-end -translate-x-30">
         {pics.map((item) => (
           <motion.img
