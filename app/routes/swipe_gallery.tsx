@@ -1,4 +1,5 @@
-import { SwipeGallery } from "~/components/SwipeGallery";
+// import { SwipeGallery } from "~/components/SwipeGallery";
+import { SwipeGalleryV2 as SwipeGallery } from "~/components/SwipeGalleryV2";
 
 export default function Route() {
   return (

@@ -41,7 +41,7 @@ export default function Home() {
           <Item link="/phone_hero" text="Scroll hero" />
           <Item link="/reorder" text="Draggable list" />
           <Item link="/swipe_gallery" text="Swipe gallery" />
-          <Item link="/infinity-moving" text="Infinity Moving Chips" />
+          <Item link="/infinity_moving" text="Infinity Moving Chips" />
           <Item link="/image_slider" text="Image Slider" />
         </ul>{" "}
       </div>
