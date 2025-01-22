@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaLeftLong, FaRightLong } from "react-icons/fa6";
 import { cn } from "~/lib/utils";
 
@@ -28,6 +28,9 @@ export const ImageSlider = ({ items }: { items: Item[] }) => {
     saved.current = cloned.shift();
     setPics(cloned);
   };
+  useEffect(() => {
+    goToRight();
+  }, []);
 
   return (
     <article className="flex flex-col justify-center items-center h-screen overflow-hidden max-w-4xl mx-auto">
