@@ -14,7 +14,7 @@ type Item = {
 export const ImageSlider = ({ items }: { items: Item[] }) => {
   const [pics, setPics] = useState(items);
   const saved = useRef(null);
-  const active = pics[pics.length - 2];
+  const active = pics[pics.length - 3];
 
   const goToRight = () => {
     const cloned = [...pics];
@@ -31,7 +31,7 @@ export const ImageSlider = ({ items }: { items: Item[] }) => {
 
   return (
     <article className="flex flex-col justify-center items-center h-screen overflow-hidden max-w-4xl mx-auto">
-      <section className="flex gap-2 justify-end items-end -translate-x-30">
+      <section className="flex gap-2 justify-end items-center -translate-x-20">
         {pics.map((item) => (
           <motion.img
             whileHover={{ scaleY: 1.02, transformOrigin: "bottom" }}
