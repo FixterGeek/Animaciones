@@ -1,8 +1,8 @@
-import { useRef, type MouseEvent, type ReactNode } from "react";
+import type { MouseEvent, ReactNode } from "react";
 import { cn } from "../lib/utils";
-import { useMeasure } from "../hooks/useMeasure";
 import { motion, useMotionTemplate, useSpring } from "motion/react";
 import { useTimeout } from "../hooks/useTimeout";
+import { useMeasure } from "../hooks/useMeasure";
 
 export const BackgroundHighlight = ({
   className,
@@ -11,11 +11,13 @@ export const BackgroundHighlight = ({
   children?: ReactNode;
   className?: string;
 }) => {
-  const ref = useRef<HTMLSpanElement>(null);
-  const { left, width } = useMeasure(ref);
-  const percentage = useSpring(0, { bounce: 0.2 });
-
   const { placeTimeout } = useTimeout(1000);
+
+  const percentage = useSpring(0, { bounce: 0.2 });
+  const {
+    ref,
+    state: { left, width },
+  } = useMeasure();
 
   const handleMouseEnter = (event: MouseEvent<HTMLSpanElement>) => {
     const { clientX } = event;
@@ -30,10 +32,10 @@ export const BackgroundHighlight = ({
 
   return (
     <motion.span
+      ref={ref}
       initial={{ backgroundSize: "0% 100%" }}
       animate={{ backgroundSize: "100% 100%" }}
       transition={{ delay: 1 }}
-      ref={ref}
       onMouseMove={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{

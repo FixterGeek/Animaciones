@@ -21,4 +21,5 @@ export default [
   route("/swipe_gallery", "./routes/swipe_gallery.tsx"),
   route("/infinity_moving", "./routes/infinity-moving.tsx"),
   route("/image_slider", "./routes/image_slider.tsx"),
+  route("/basic_gallery", "./routes/basic_gallery.tsx"),
 ] satisfies RouteConfig;

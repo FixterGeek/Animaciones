@@ -26,6 +26,7 @@ export default function Home() {
           </a>
         </p>
         <ul className="max-w-xl w-fit text-left mx-auto mt-8">
+          <Item link="/basic_gallery" text="Basic gallery" />
           <Item link="/accordion" text="Accordion gallery" />
           <Item link="/banners" text="Banners" />
           <Item link="/beam" text="Scroll beam" />
