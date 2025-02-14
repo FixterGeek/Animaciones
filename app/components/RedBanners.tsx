@@ -4,7 +4,6 @@ import {
   useMotionTemplate,
   useSpring,
 } from "framer-motion";
-import { cn } from "../lib/utils";
 import {
   Children,
   useEffect,
@@ -12,6 +11,7 @@ import {
   type MouseEvent,
   type ReactNode,
 } from "react";
+import { cn } from "../lib/utils";
 import { useInfinityMovement } from "~/hooks/useInfinityMovement";
 
 export const RedBanners = ({ children }: { children?: ReactNode }) => {
@@ -33,7 +33,6 @@ export const RedBanners = ({ children }: { children?: ReactNode }) => {
       className={cn("min-h-screen text-white relative overflow-hidden")}
     >
       <BigRectangle
-        direction={-1}
         onMouseEnter={() => setCurrentHover(0)}
         isHovered={currentHover === 0}
         className="rotate-12 bg-black"
@@ -41,6 +40,7 @@ export const RedBanners = ({ children }: { children?: ReactNode }) => {
         {secondChild}
       </BigRectangle>
       <BigRectangle
+        direction={-1}
         isHovered={currentHover === 1}
         onMouseEnter={() => setCurrentHover(1)}
       >
@@ -76,16 +76,15 @@ const BigRectangle = ({
   return (
     <div
       ref={animateScope}
-      style={{ filter: "blur(9px)" }}
-      id={isHovered ? "blury" : "none"}
       onMouseEnter={onMouseEnter}
+      style={{ filter: "blur(9px)" }}
       className={cn(
         "h-28 bg-red-500 absolute -rotate-12 top-[40vh] w-[120%] translate-x-[-10vw] gird place-content-center text-3xl text-nowrap",
         "uppercase font-bold",
         className
       )}
     >
-      <motion.div ref={infinityScope} style={{ x }} className="min-w-max">
+      <motion.div ref={infinityScope} style={{ x }} className="w-max mx-4">
         {children}
         {children}
       </motion.div>
