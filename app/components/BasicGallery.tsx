@@ -21,7 +21,7 @@ export const BasicGallery = ({
 
   return (
     <section className={cn("py-20 px-12", className)}>
-      <div className="max-w-7xl mx-auto items-center">
+      <div className="max-w-md mx-auto">
         <CommentItem
           item={items[currentIndex]}
           onClick={(index) => setCurrentIndex(index)}
