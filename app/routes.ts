@@ -5,6 +5,7 @@ export default [
   route("/highlight", "./routes/highlight.tsx"),
   route("/accordion", "./routes/accordion.tsx"),
   route("/banners", "./routes/banners.tsx"),
+  route("/red_banners", "./routes/red_banners.tsx"),
   route("/beam", "./routes/beam.tsx"),
   route("/border_button", "./routes/border_button.tsx"),
   route("/cardtridi", "./routes/cardtridi.tsx"),
