@@ -19,8 +19,10 @@ export default [
   route("/phone_hero", "./routes/phone_hero.tsx"),
   route("/reorder", "./routes/reorder.tsx"),
   route("/rotary", "./routes/rotary.tsx"),
+  route("/rotary_gallery", "./routes/rotary_gallery.tsx"),
   route("/swipe_gallery", "./routes/swipe_gallery.tsx"),
   route("/infinity_moving", "./routes/infinity-moving.tsx"),
   route("/image_slider", "./routes/image_slider.tsx"),
   route("/basic_gallery", "./routes/basic_gallery.tsx"),
+  route("/auto_circle", "./routes/auto_circle.tsx"),
 ] satisfies RouteConfig;
