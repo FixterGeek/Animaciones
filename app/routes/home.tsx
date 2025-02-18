@@ -11,7 +11,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <section className="flex pt-40 min-h-screen justify-center">
+    <section className="flex py-40 min-h-screen justify-center">
       <div>
         <img className="w-64 mx-auto" src="/robot-hat.png" />
         <h1 className="text-white text-4xl font-bold mt-6 text-center">
@@ -44,6 +44,8 @@ export default function Home() {
           <Item link="/swipe_gallery" text="Swipe gallery" />
           <Item link="/infinity_moving" text="Infinity Moving Chips" />
           <Item link="/image_slider" text="Image Slider" />
+          <Item link="/red_banners" text="Red Banners" />
+          <Item link="/auto_circle" text="Práctica para Rotary" />
         </ul>{" "}
       </div>
     </section>
