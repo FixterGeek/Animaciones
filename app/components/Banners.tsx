@@ -6,7 +6,7 @@ import {
   useTransform,
   easeIn,
 } from "framer-motion";
-import { Children, useEffect, useRef, useState, type ReactNode } from "react";
+import { Children, useEffect, useState, type ReactNode } from "react";
 import { PiRobotDuotone } from "react-icons/pi";
 import { cn } from "../lib/utils";
 import { useMarquee } from "../hooks/useMarquee";

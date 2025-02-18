@@ -4,8 +4,15 @@ import { GiBulletImpacts } from "react-icons/gi";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Componentes mágicos 🪄✨" },
+    {
+      name: "description",
+      content: "Componentes del curso de animaciones con React",
+    },
+    {
+      name: "og:image",
+      content: "/robot-hat.png",
+    },
   ];
 }
 
@@ -26,6 +33,7 @@ export default function Home() {
           </a>
         </p>
         <ul className="max-w-xl w-fit text-left mx-auto mt-8">
+          <Item link="/basic_gallery" text="Basic gallery" />
           <Item link="/accordion" text="Accordion gallery" />
           <Item link="/banners" text="Banners" />
           <Item link="/beam" text="Scroll beam" />
@@ -43,6 +51,8 @@ export default function Home() {
           <Item link="/swipe_gallery" text="Swipe gallery" />
           <Item link="/infinity_moving" text="Infinity Moving Chips" />
           <Item link="/image_slider" text="Image Slider" />
+          <Item link="/red_banners" text="Red Banners" />
+          <Item link="/auto_circle" text="Práctica para Rotary" />
         </ul>{" "}
       </div>
     </section>

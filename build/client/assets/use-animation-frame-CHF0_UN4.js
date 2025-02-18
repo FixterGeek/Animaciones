@@ -1,0 +1,1 @@
+import{r}from"./chunk-D52XG6IA-Bgsi9VY-.js";import{M as a}from"./proxy-BMLmG_ct.js";import{f as u,c}from"./SVGVisualElement-CV7yoBz5.js";function x(e){const t=r.useRef(0),{isStatic:i}=r.useContext(a);r.useEffect(()=>{if(i)return;const n=({timestamp:o,delta:s})=>{t.current||(t.current=o),e(o-t.current,s)};return u.update(n,!0),()=>c(n)},[e])}export{x as u};

@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/public/slide_gallery/zeus.jpg"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="modulepreload" href="/curso_animaciones/assets/entry.client-CY7hyNzS.js"/><link rel="modulepreload" href="/curso_animaciones/assets/chunk-D52XG6IA-Bgsi9VY-.js"/><link rel="modulepreload" href="/curso_animaciones/assets/index-D70Zcbjq.js"/><link rel="modulepreload" href="/curso_animaciones/assets/with-props-BgyIDXvL.js"/><link rel="modulepreload" href="/curso_animaciones/assets/root-BO8x-Y9g.js"/><link rel="modulepreload" href="/curso_animaciones/assets/utils-CAop8nS8.js"/><link rel="modulepreload" href="/curso_animaciones/assets/bundle-mjs-D696Ktp4.js"/><link rel="modulepreload" href="/curso_animaciones/assets/basic_gallery-BfcdCbZr.js"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap"/><link rel="stylesheet" href="/curso_animaciones/assets/app-CEYmLmLl.css"/></head><body><article class="text-white min-h-[95vh] flex flex-col justify-center"><main class="pt-20"><h1 class="text-3xl font-bold text-center mb-8">Basic Gallery</h1><section class="py-20 px-12 bg-yellow-600"><div class="max-w-md mx-auto"><section class="flex flex-col"><img class="rounded-full my-8 h-[420px] w-[420px] mx-auto object-cover bg-black" src="/public/slide_gallery/zeus.jpg" alt="pic"/><p class="text-center font-bold text-xl mb-4">Lorem ipsum mm mitologos soziculucus morbius dignitas hominis.</p><h4 class="font-bold text-center mb-8 text-3xl">- <!-- -->Blissmo</h4><section class="mt-auto flex gap-1 justify-center"><button class="w-6 h-6 rounded-full bg-black border-[1px] border-b-[2px] border-r-[2px] border-black relative"><div class="absolute bg-white rounded-full border border-black z-10 inset-0 bottom-px right-px"></div></button><button class="w-6 h-6 rounded-full bg-black border-[1px] border-b-[2px] border-r-[2px] border-black relative"></button><button class="w-6 h-6 rounded-full bg-black border-[1px] border-b-[2px] border-r-[2px] border-black relative"></button></section></section></div></section></main></article><script>((storageKey2, restoreKey) => {
+    if (!window.history.state || !window.history.state.key) {
+      let key = Math.random().toString(32).slice(2);
+      window.history.replaceState({ key }, "");
+    }
+    try {
+      let positions = JSON.parse(sessionStorage.getItem(storageKey2) || "{}");
+      let storedY = positions[restoreKey || window.history.state.key];
+      if (typeof storedY === "number") {
+        window.scrollTo(0, storedY);
+      }
+    } catch (error) {
+      console.error(error);
+      sessionStorage.removeItem(storageKey2);
+    }
+  })("react-router-scroll-positions", null)</script><script>window.__reactRouterContext = {"basename":"/","future":{"unstable_optimizeDeps":false},"isSpaMode":false};window.__reactRouterContext.stream = new ReadableStream({start(controller){window.__reactRouterContext.streamController = controller;}}).pipeThrough(new TextEncoderStream());</script><script type="module" async="">;
+import * as route0 from "/curso_animaciones/assets/root-BO8x-Y9g.js";
+import * as route1 from "/curso_animaciones/assets/basic_gallery-BfcdCbZr.js";
+  window.__reactRouterManifest = {
+  "entry": {
+    "module": "/curso_animaciones/assets/entry.client-CY7hyNzS.js",
+    "imports": [
+      "/curso_animaciones/assets/chunk-D52XG6IA-Bgsi9VY-.js",
+      "/curso_animaciones/assets/index-D70Zcbjq.js"
+    ],
+    "css": []
+  },
+  "routes": {
+    "root": {
+      "id": "root",
+      "path": "",
+      "hasAction": false,
+      "hasLoader": false,
+      "hasClientAction": false,
+      "hasClientLoader": false,
+      "hasErrorBoundary": true,
+      "module": "/curso_animaciones/assets/root-BO8x-Y9g.js",
+      "imports": [
+        "/curso_animaciones/assets/chunk-D52XG6IA-Bgsi9VY-.js",
+        "/curso_animaciones/assets/index-D70Zcbjq.js",
+        "/curso_animaciones/assets/with-props-BgyIDXvL.js"
+      ],
+      "css": []
+    },
+    "routes/basic_gallery": {
+      "id": "routes/basic_gallery",
+      "parentId": "root",
+      "path": "/basic_gallery",
+      "hasAction": false,
+      "hasLoader": false,
+      "hasClientAction": false,
+      "hasClientLoader": false,
+      "hasErrorBoundary": false,
+      "module": "/curso_animaciones/assets/basic_gallery-BfcdCbZr.js",
+      "imports": [
+        "/curso_animaciones/assets/with-props-BgyIDXvL.js",
+        "/curso_animaciones/assets/chunk-D52XG6IA-Bgsi9VY-.js",
+        "/curso_animaciones/assets/utils-CAop8nS8.js",
+        "/curso_animaciones/assets/bundle-mjs-D696Ktp4.js"
+      ],
+      "css": []
+    },
+    "routes/home": {
+      "id": "routes/home",
+      "parentId": "root",
+      "index": true,
+      "hasAction": false,
+      "hasLoader": false,
+      "hasClientAction": false,
+      "hasClientLoader": false,
+      "hasErrorBoundary": false,
+      "module": "/curso_animaciones/assets/home-DOqnWPFy.js",
+      "imports": [
+        "/curso_animaciones/assets/with-props-BgyIDXvL.js",
+        "/curso_animaciones/assets/chunk-D52XG6IA-Bgsi9VY-.js",
+        "/curso_animaciones/assets/iconBase-C55J46VY.js"
+      ],
+      "css": []
+    }
+  },
+  "url": "/curso_animaciones/assets/manifest-d4afb03d.js",
+  "version": "d4afb03d"
+};
+  window.__reactRouterRouteModules = {"root":route0,"routes/basic_gallery":route1};
+
+import("/curso_animaciones/assets/entry.client-CY7hyNzS.js");</script><!--$?--><template id="B:0"></template><!--/$--><div hidden id="S:0"><script>window.__reactRouterContext.streamController.enqueue("[{\"_1\":2,\"_5\":-5,\"_6\":-5},\"loaderData\",{\"_3\":-5,\"_4\":-5},\"root\",\"routes/basic_gallery\",\"actionData\",\"errors\"]\n");</script><!--$?--><template id="B:1"></template><!--/$--></div><script>$RC=function(b,c,e){c=document.getElementById(c);c.parentNode.removeChild(c);var a=document.getElementById(b);if(a){b=a.previousSibling;if(e)b.data="$!",a.setAttribute("data-dgst",e);else{e=b.parentNode;a=b.nextSibling;var f=0;do{if(a&&8===a.nodeType){var d=a.data;if("/$"===d)if(0===f)break;else f--;else"$"!==d&&"$?"!==d&&"$!"!==d||f++}d=a.nextSibling;e.removeChild(a);a=d}while(a);for(;c.firstChild;)e.insertBefore(c.firstChild,a);b.data="$"}b._reactRetry&&b._reactRetry()}};$RC("B:0","S:0")</script><div hidden id="S:1"><script>window.__reactRouterContext.streamController.close();</script></div><script>$RC("B:1","S:1")</script></body></html>

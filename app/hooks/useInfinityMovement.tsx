@@ -10,9 +10,9 @@ import {
 import { useRef } from "react";
 
 export const useInfinityMovement = (
-  direction: number,
-  isHovered: boolean,
-  withVelocity: boolean
+  direction: number = 1,
+  isHovered: boolean = false,
+  withVelocity: boolean = false
 ) => {
   // scroll
   const { scrollY } = useScroll();
