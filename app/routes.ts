@@ -25,4 +25,5 @@ export default [
   route("/image_slider", "./routes/image_slider.tsx"),
   route("/basic_gallery", "./routes/basic_gallery.tsx"),
   route("/auto_circle", "./routes/auto_circle.tsx"),
+  route("/new_rotary", "./routes/new_rotary.tsx"),
 ] satisfies RouteConfig;
