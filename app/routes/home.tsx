@@ -4,8 +4,15 @@ import { GiBulletImpacts } from "react-icons/gi";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Componentes mágicos 🪄✨" },
+    {
+      name: "description",
+      content: "Componentes del curso de animaciones con React",
+    },
+    {
+      name: "og:image",
+      content: "/robot-hat.png",
+    },
   ];
 }
 
