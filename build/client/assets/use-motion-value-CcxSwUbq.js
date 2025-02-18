@@ -1,0 +1,1 @@
+import{r as t}from"./chunk-D52XG6IA-Bgsi9VY-.js";import{u as a,E as r}from"./SVGVisualElement-CV7yoBz5.js";import{M as u}from"./proxy-BMLmG_ct.js";function m(o){const e=a(()=>r(o)),{isStatic:s}=t.useContext(u);if(s){const[,n]=t.useState(o);t.useEffect(()=>e.on("change",n),[])}return e}export{m as u};

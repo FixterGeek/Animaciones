@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router";
 import { generatePics } from "../lib/generatePics";
 import { SimpleAnimatedGallery } from "~/components/SimpleAnimatedGallery";
 
-export const loader = () => {
+export const clientLoader = () => {
   return { pics: generatePics() };
 };
 

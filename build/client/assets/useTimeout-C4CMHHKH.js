@@ -1,0 +1,1 @@
+import{r as t}from"./chunk-D52XG6IA-Bgsi9VY-.js";const m=r=>{const e=t.useRef(void 0),u=c=>{e.current&&clearTimeout(e.current),e.current=setTimeout(c,r*1e3)},o=()=>{e.current&&clearTimeout(e.current)};return t.useEffect(()=>e.current&&clearTimeout(e.current),[]),{placeTimeout:u,removeTimeout:o}};export{m as u};

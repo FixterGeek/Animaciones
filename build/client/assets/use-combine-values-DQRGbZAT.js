@@ -1,0 +1,1 @@
+import{u as n}from"./use-motion-value-CcxSwUbq.js";import{u as c}from"./proxy-BMLmG_ct.js";import{c as f,f as m}from"./SVGVisualElement-CV7yoBz5.js";function d(s,t){const r=n(t()),e=()=>r.set(t());return e(),c(()=>{const a=()=>m.preRender(e,!1,!0),u=s.map(o=>o.on("change",a));return()=>{u.forEach(o=>o()),f(e)}}),r}export{d as u};
