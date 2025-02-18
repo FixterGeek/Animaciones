@@ -8,7 +8,7 @@ import {
   useMotionValueEvent,
   AnimatePresence,
 } from "motion/react";
-import { Children, useEffect, useRef, type ReactNode } from "react";
+import { Children, useEffect, useRef, useState, type ReactNode } from "react";
 import { useMatchMedia } from "~/hooks/useMatchMedia";
 import { cn } from "~/lib/utils";
 
@@ -38,8 +38,19 @@ export const NewRotaryGallery = ({
   const opacity4 = useTransform(springYProgress, [0.68, 0.99], [0, 1]);
   const opacities = [opacity1, opacity2, opacity3, opacity4];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
   useMotionValueEvent(springYProgress, "change", (last) => {
-    // console.log("Scroll", last);
+    let idx = 0;
+    if (last >= 0.38) {
+      idx = 1;
+    }
+    if (last >= 0.68) {
+      idx = 2;
+    }
+    if (last >= 0.99) {
+      idx = 3;
+    }
+    setCurrentIndex(idx);
   });
 
   return (
@@ -83,15 +94,23 @@ export const NewRotaryGallery = ({
             ))}
           </div>
           <div className="relative">
-            {nodes.map((node, i) => (
-              <motion.div
-                style={{ opacity: opacities[i] }}
-                className="text-xs font-medium absolute top-10 left-0"
-                key={i}
-              >
-                {node}
-              </motion.div>
-            ))}
+            <AnimatePresence>
+              {nodes.map(
+                (node, i) =>
+                  currentIndex === i && (
+                    <motion.div
+                      key={currentIndex}
+                      initial={{ opacity: 0, y: -10 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      // style={{ opacity: opacities[i] }}
+                      className="text-xs font-medium absolute top-10 left-0"
+                    >
+                      {node}
+                    </motion.div>
+                  )
+              )}
+            </AnimatePresence>
           </div>
         </nav>
       </main>
