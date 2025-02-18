@@ -11,7 +11,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <section className="flex py-40 min-h-screen justify-center">
+    <section className="flex py-20 min-h-screen justify-center">
       <div>
         <img className="w-64 mx-auto" src="/robot-hat.png" />
         <h1 className="text-white text-4xl font-bold mt-6 text-center">
