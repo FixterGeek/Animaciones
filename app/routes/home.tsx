@@ -53,6 +53,7 @@ export default function Home() {
           <Item link="/image_slider" text="Image Slider" />
           <Item link="/red_banners" text="Red Banners" />
           <Item link="/auto_circle" text="Práctica para Rotary" />
+          <Item link="/new_rotary" text="Rotary Gallery" />
         </ul>{" "}
       </div>
     </section>

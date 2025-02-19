@@ -40,17 +40,17 @@ export const NewRotaryGallery = ({
 
   const [currentIndex, setCurrentIndex] = useState(0);
   useMotionValueEvent(springYProgress, "change", (last) => {
-    let idx = 0;
+    let indx = 0;
     if (last >= 0.38) {
-      idx = 1;
+      indx = 1;
     }
     if (last >= 0.68) {
-      idx = 2;
+      indx = 2;
     }
     if (last >= 0.99) {
-      idx = 3;
+      indx = 3;
     }
-    setCurrentIndex(idx);
+    setCurrentIndex(indx);
   });
 
   return (
@@ -94,15 +94,15 @@ export const NewRotaryGallery = ({
             ))}
           </div>
           <div className="relative">
-            <AnimatePresence>
+            <AnimatePresence mode="popLayout">
               {nodes.map(
                 (node, i) =>
                   currentIndex === i && (
                     <motion.div
-                      key={currentIndex}
                       initial={{ opacity: 0, y: -10 }}
                       exit={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
+                      key={currentIndex}
                       // style={{ opacity: opacities[i] }}
                       className="text-xs font-medium absolute top-10 left-0"
                     >
@@ -132,13 +132,13 @@ const VideoGear = ({
     "2": 3,
   };
   const rotateZ = useTransform(scrollYProgress, [0, 1], [-10, 109]);
-  const isMatching = useMatchMedia("(min-width: 1024px)");
+  const isDesktop = useMatchMedia("(min-width: 1024px)");
   return (
     <motion.div
       style={{
         rotateZ,
-        scale: isMatching ? 6 : 4,
-        x: isMatching ? "200%" : "150%",
+        scale: isDesktop ? 6 : 4,
+        x: isDesktop ? "200%" : "150%",
       }}
       className={cn("rounded-full w-[420px] h-[420px] relative")}
     >
