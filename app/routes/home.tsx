@@ -32,29 +32,38 @@ export default function Home() {
             </strong>
           </a>
         </p>
-        <ul className="max-w-xl w-fit text-left mx-auto mt-8">
-          <Item link="/basic_gallery" text="Basic gallery" />
-          <Item link="/accordion" text="Accordion gallery" />
-          <Item link="/banners" text="Banners" />
-          <Item link="/beam" text="Scroll beam" />
-          <Item link="/border_button" text="Border button" />
-          <Item link="/cardtridi" text="Card 3d" />
-          <Item link="/carrousell" text="Carrousell" />
-          <Item link="/drawer" text="Drawer" />
-          <Item link="/flipper" text="Flipper" />
-          <Item link="/flipwords" text="Flipwords" />
-          <Item link="/grid-gallery" text="Grid gallery" />
-          <Item link="/jackpot" text="Jackpot" />
-          <Item link="/moving_border" text="Bloob button" />
-          <Item link="/phone_hero" text="Scroll hero" />
-          <Item link="/reorder" text="Draggable list" />
-          <Item link="/swipe_gallery" text="Swipe gallery" />
-          <Item link="/infinity_moving" text="Infinity Moving Chips" />
-          <Item link="/image_slider" text="Image Slider" />
-          <Item link="/red_banners" text="Red Banners" />
-          <Item link="/auto_circle" text="Práctica para Rotary" />
-          <Item link="/new_rotary" text="Rotary Gallery" />
-        </ul>{" "}
+        <section className="flex mt-8">
+          <ul className="max-w-xl w-fit text-left mx-auto ">
+            <h2 className="text-white font-bold text-3xl">Curso completo👈🏻</h2>
+            <Item link="/basic_gallery" text="Basic gallery" />
+            <Item link="/accordion" text="Accordion gallery" />
+            <Item link="/banners" text="Banners" />
+            <Item link="/beam" text="Scroll beam" />
+            <Item link="/border_button" text="Border button" />
+            <Item link="/cardtridi" text="Card 3d" />
+            <Item link="/carrousell" text="Carrousell" />
+            <Item link="/drawer" text="Drawer" />
+            <Item link="/flipper" text="Flipper" />
+            <Item link="/flipwords" text="Flipwords" />
+            <Item link="/grid-gallery" text="Grid gallery" />
+            <Item link="/jackpot" text="Jackpot" />
+            <Item link="/moving_border" text="Bloob button" />
+            <Item link="/phone_hero" text="Scroll hero" />
+            <Item link="/reorder" text="Draggable list" />
+            <Item link="/swipe_gallery" text="Swipe gallery" />
+            <Item link="/infinity_moving" text="Infinity Moving Chips" />
+            <Item link="/image_slider" text="Image Slider" />
+            <Item link="/red_banners" text="Red Banners" />
+            <Item link="/auto_circle" text="Práctica para Rotary" />
+            <Item link="/new_rotary" text="Rotary Gallery" />
+          </ul>{" "}
+          <ul>
+            <h2 className="text-white font-bold text-3xl">
+              👉🏼Módulo 8 y extras:
+            </h2>
+            <Item link="/scroll_gallery" text="Scroll Gallery" />
+          </ul>
+        </section>
       </div>
     </section>
   );
