@@ -16,20 +16,24 @@ import {
   type ReactNode,
   type RefObject,
 } from "react";
+import { useFakeData, type Group } from "~/hooks/useFakeData";
+import { useMatchMedia } from "~/hooks/useMatchMedia";
 import { cn } from "~/lib/utils";
+import { images as staticImages } from "~/hooks/useFakeData";
+
+const ranges = [
+  [0, 0],
+  [0, 0.2],
+  [0.2, 0.4],
+  [0.4, 0.6],
+  [0.6, 0.8],
+  [0.8, 1],
+];
 
 export const ScrollGallery = ({
   title = "Fixtergeek.com",
   subtitle = "Diseñado por Brendi. 👧🏻",
-  images = [
-    "/scroll_gallery/branding.webp",
-    "/scroll_gallery/cellphones.webp",
-    "/scroll_gallery/awesome.webp",
-    "/scroll_gallery/beauty.webp",
-    "/scroll_gallery/design.webp",
-    "/scroll_gallery/pool.webp",
-    "/scroll_gallery/chair.webp",
-  ],
+  images = staticImages,
 }: {
   images: string[];
   title: string;
@@ -46,25 +50,31 @@ export const ScrollGallery = ({
     [0, 0.2, 0.4, 0.6, 0.8], // 5 sections+
     [0, 1, 2, 3, 4]
   );
+
   useMotionValueEvent(exactIndex, "change", (latest) => {
     const index = Math.floor(latest);
     if (index !== currentIndex) {
       setCurrentIndex(index);
     }
   });
+
+  const { groups } = useFakeData();
+
   return (
-    <article ref={target} className="text-white h-[600vh] bg-black ">
-      <section className="sticky top-0 h-screen flex justify-center items-center">
-        <header className="mr-8">
-          <h2 className="text-xl font-bold mb-3">{title}</h2>
-          <p className="text-xs text-gray-300">
+    <article ref={target} className="text-white h-[500vh] bg-black ">
+      <section className="sticky top-0 h-screen flex justify-center items-center lg:w-[68vw] gap-6 pl-6">
+        <header className="">
+          <h2 className="lg:text-7xl text-5xl font-bold mb-3 lg:mb-10">
+            {title}
+          </h2>
+          <p className="text-2xl lg:text-4xl text-gray-300">
             <strong className="tracking-wide text-white">
               {splitSubtitle[0]}{" "}
             </strong>
             {splitSubtitle.slice(1).join(" ")}
             <span>{currentIndex}</span>
           </p>
-          <div className="w-[56px] overflow-hidden rounded-l-full">
+          <div className="w-[13vw] lg:w-[10vw] overflow-hidden rounded-l-full">
             <AnimatedUnderline scrollYProgress={scrollYProgress} />
           </div>
         </header>
@@ -73,31 +83,63 @@ export const ScrollGallery = ({
             onMouseLeave={() => setIsHovered(99)}
             scrollYProgress={springYProgress}
           >
-            <img className="object-cover inset-0 absolute" src={images[0]} />
-            <AnimatedGallery
-              onMouseEnter={() => setIsHovered(1)}
-              isPlaying={isHovered === 1}
-              srcset={[images[1], images[images.length - 1]]}
-            />
-            <AnimatedGallery
-              onMouseEnter={() => setIsHovered(2)}
-              isPlaying={isHovered === 2}
-              srcset={[images[2], images[images.length - 1]]}
-            />
-            <AnimatedGallery
-              onMouseEnter={() => setIsHovered(3)}
-              srcset={[images[3], images[images.length - 2]]}
-              isPlaying={isHovered === 3}
-            />
-            <AnimatedGallery
-              onMouseEnter={() => setIsHovered(4)}
-              srcset={[images[4], images[images.length - 1]]}
-              isPlaying={isHovered === 4}
-            />
+            {groups.map((g, i) => (
+              <AnimatedGallery
+                key={i}
+                onMouseEnter={() => setIsHovered(i)}
+                isPlaying={isHovered === i}
+                srcset={[images[i], ...g.images]}
+              />
+            ))}
           </Block>
         </main>
+        <footer className="w-[420px]"></footer>
       </section>
+      {/* {groups.map((g, i) => (
+        <div className="">
+          <Actions
+            scrollYProgress={scrollYProgress}
+            range={ranges[i + 1]}
+            group={g}
+            key={i}
+          />
+        </div>
+      ))} */}
     </article>
+  );
+};
+
+const Actions = ({
+  group,
+  range,
+  scrollYProgress,
+}: {
+  range: number[];
+  group: Group;
+  scrollYProgress: MotionValue<number>;
+}) => {
+  // const y = useTransform(scrollYProgress, range, ["50vh", "0vh"]);
+  return (
+    <motion.div className="h-[80vh] lg:flex flex-col pl-[65%] gap-6 hidden bg-gray-500">
+      <h3 className="text-5xl font-extralight">{group.title}</h3>
+      <div className="flex gap-4">
+        {group.links.map((l, i) => (
+          <button
+            className={cn(
+              "hover:scale-110",
+              "py-3 px-6 bg-pink-500 rounded-full",
+              {
+                "bg-white text-black": i === 1,
+                "bg-transparent border-2": i === 2,
+              }
+            )}
+          >
+            {l.text}
+          </button>
+        ))}
+      </div>
+      <p className="text-2xl">{group.paragraph}</p>
+    </motion.div>
   );
 };
 
@@ -167,37 +209,30 @@ const Block = ({
   scrollYProgress: MotionValue<number>;
   [x: string]: unknown;
 }) => {
-  const ranges = [null, [0, 0.2], [0.2, 0.4], [0.4, 0.6], [0.6, 0.8]];
   const images = Children.toArray(children);
+
+  console.log("Images", images);
 
   return (
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       className={cn(
-        "overflow-hidden w-[38vw] h-[45vh] bg-transparent rounded-3xl",
+        "overflow-hidden lg:w-[24vw] lg:h-[60vh] w-[40vw] h-[50vh] bg-transparent rounded-3xl",
         "relative",
-        "bg-red-500"
+        "bg-indigo-500"
       )}
       {...props}
     >
-      <AnimatedImage
-        noClipPath
-        scrollYProgress={scrollYProgress}
-        index={0}
-        node={images[0]}
-      />
-      {images.map((node, i) =>
-        i === 0 ? null : (
-          <AnimatedImage
-            scrollYProgress={scrollYProgress}
-            range={ranges[i]}
-            index={i}
-            key={i}
-            node={node}
-          />
-        )
-      )}
+      {images.map((node, i) => (
+        <AnimatedImage
+          scrollYProgress={scrollYProgress}
+          range={ranges[i]}
+          index={i}
+          key={i}
+          node={node}
+        />
+      ))}
     </div>
   );
 };
@@ -215,9 +250,13 @@ const AnimatedImage = ({
   node: ReactNode;
   index: number;
 }) => {
-  const y = useTransform(scrollYProgress, range, [10, 0]);
-  const percentage = useTransform(scrollYProgress, range, [0, 200]);
-  const pixels = useTransform(scrollYProgress, range, [0, 250]);
+  const y = useTransform(scrollYProgress, range, [30, 0]);
+  const percentage = useTransform(scrollYProgress, range, [0, 500]);
+  const isDesktop = useMatchMedia("(min-width: 1024px)");
+  const pixels = useTransform(scrollYProgress, range, [
+    0,
+    isDesktop ? 700 : 600,
+  ]);
   // 45% 0px at 50% 100% => 165% 586px at 50% 100%
   const clipPath = noClipPath
     ? "ellipse(100% 100%)"
@@ -250,25 +289,28 @@ const AnimatedUnderline = ({
 }) => {
   const map: Stroke[] = [
     {
-      color: "#5e60f6",
-      range: [0, 0.1],
+      // color: "#5e60f6",
+      color: "#ffb7e4", // pink
+      range: [0, 0.2],
     },
 
     {
-      color: "#ffb7e4",
-      range: [0.1, 0.2],
-    },
-    {
-      color: "#da3e05",
+      color: "#da3e05", // orange
       range: [0.2, 0.4],
     },
     {
-      color: "#efc2cd",
+      // color: "#da3e05",
+      color: "#ffb7e4", // pink
       range: [0.4, 0.6],
     },
     {
-      color: "#5e60f6",
+      // color: "#efc2cd",
+      color: "#5e60f6", // indigo
       range: [0.6, 0.8],
+    },
+    {
+      color: "#5e60f6", // indigo
+      range: [0.8, 1],
     },
   ];
   return (
@@ -278,9 +320,9 @@ const AnimatedUnderline = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {map.map((stroke) => (
+      {map.map((stroke, i) => (
         <AnimatedPath
-          key={stroke.color}
+          key={i}
           stroke={stroke}
           scrollYProgress={scrollYProgress}
         />
