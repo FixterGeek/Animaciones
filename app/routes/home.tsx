@@ -62,6 +62,7 @@ export default function Home() {
               👉🏼Módulo 8 y extras:
             </h2>
             <Item link="/scroll_gallery" text="Scroll Gallery" />
+            <Item link="/abanico" text="Scroll Abanico" />
           </ul>
         </section>
       </div>

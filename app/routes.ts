@@ -27,4 +27,5 @@ export default [
   route("/auto_circle", "./routes/auto_circle.tsx"),
   route("/new_rotary", "./routes/new_rotary.tsx"),
   route("/scroll_gallery", "./routes/scroll_gallery.tsx"),
+  route("/abanico", "./routes/abanico.tsx"),
 ] satisfies RouteConfig;
